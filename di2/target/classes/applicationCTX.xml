@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	
+	
+	<bean class="com.wan.di2.BMICalc" id="bmiCalc">
+		<property name="lowWeight">
+			<value>
+				18.5
+			</value>
+		</property>
+
+		<property name="normal">
+			<value>
+				23
+			</value>
+		</property>
+
+		<property name="obesity">
+			<value>
+				30
+			</value>
+		</property>
+
+	</bean>
+	<bean class="com.wan.di2.Info" id="info">
+		<propery name="name">
+			<value>홍길동</value>
+		</propery>
+
+		<propery name="height">
+			<value>207</value>
+		</propery>
+		<property name="weight">
+			<value>75</value>
+		</property>
+		<property name="hobby">
+			<list>
+				<value>숨쉬기</value>
+				<value>먹기</value>
+				<value>싸기</value>
+				<value>자기</value>
+			</list>
+		</property>
+		
+		<property name="bmiCalc">
+			<ref bean="bmiCalc"/>
+		</property>
+	</bean>
+
+</beans>
